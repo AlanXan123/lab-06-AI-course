@@ -1,0 +1,52 @@
+{
+  "harness_controls": [
+    "validate_input",
+    "blind",
+    "refuse",
+    "log",
+    "escalate"
+  ],
+  "format_problems": [],
+  "entries": [
+    {
+      "control": "validate_input",
+      "principle": "Professional quality and avoidance of harm",
+      "principle_source": "ACM Code of Ethics and Professional Conduct (2018), https://www.acm.org/code-of-ethics, §§2.1 and 1.2",
+      "instrument": "Republic of Kazakhstan, Law On Artificial Intelligence, 17 November 2025, No. 230-VIII, https://old.adilet.zan.kz/rus/docs/Z2500000230",
+      "provision": "Article 11(1), safety and reliability. The exact field ranges are local design choices.",
+      "why_here": "The baseline assessed only clean inputs and had 0 parse failures. Input validation addresses a separate failure mode by stopping impossible values before inference."
+    },
+    {
+      "control": "blind",
+      "principle": "Fairness and privacy",
+      "principle_source": "ACM Code of Ethics and Professional Conduct (2018), https://www.acm.org/code-of-ethics, §§1.4 and 1.6",
+      "instrument": "Republic of Kazakhstan, Law On Artificial Intelligence, 17 November 2025, No. 230-VIII, https://old.adilet.zan.kz/rus/docs/Z2500000230",
+      "provision": "Article 6, fairness and non-discrimination. Field suppression implements the principle for this fund.",
+      "why_here": "The name comparisons did not clearly exceed their control intervals, and university tier tied its flip floor. The signed flagship score shift supports testing a tier-blind prompt even with uncertain decision-level evidence."
+    },
+    {
+      "control": "refuse",
+      "principle": "Avoidance of harm and respect for privacy",
+      "principle_source": "ACM Code of Ethics and Professional Conduct (2018), https://www.acm.org/code-of-ethics, §§1.2 and 1.6",
+      "instrument": "Republic of Kazakhstan, Law On Personal Data and Their Protection, 21 May 2013, No. 94-V, https://old.adilet.zan.kz/rus/docs/Z1300000094 | Republic of Kazakhstan, Law On Artificial Intelligence, 17 November 2025, No. 230-VIII, https://old.adilet.zan.kz/rus/docs/Z2500000230",
+      "provision": "Personal Data Law Article 19-1(1), consent or a statutory basis in the covered circumstances; AI Law Article 11(1), safety. Used as deployment benchmarks for synthetic data.",
+      "why_here": "The clean baseline measures consistency under one allowed purpose. Refusal covers inadmissible requests that the baseline comparison cannot measure and Part 4 exercises those gates."
+    },
+    {
+      "control": "log",
+      "principle": "Professional review and risk evaluation",
+      "principle_source": "ACM Code of Ethics and Professional Conduct (2018), https://www.acm.org/code-of-ethics, §§2.4 and 2.5",
+      "instrument": "Republic of Kazakhstan, Law On Artificial Intelligence, 17 November 2025, No. 230-VIII, https://old.adilet.zan.kz/rus/docs/Z2500000230",
+      "provision": "Articles 8(1) and 15(2)(3), oversight and documentation. JSONL is an implementation choice.",
+      "why_here": "The bare run recorded 0 parse failures. Consistent reason codes and raw replies make failures, refusals and escalations distinguishable when they occur."
+    },
+    {
+      "control": "escalate",
+      "principle": "Avoidance of harm and risk evaluation",
+      "principle_source": "ACM Code of Ethics and Professional Conduct (2018), https://www.acm.org/code-of-ethics, §§1.2 and 2.5",
+      "instrument": "Republic of Kazakhstan, Law On Artificial Intelligence, 17 November 2025, No. 230-VIII, https://old.adilet.zan.kz/rus/docs/Z2500000230 | Republic of Kazakhstan, Law On Personal Data and Their Protection, 21 May 2013, No. 94-V, https://old.adilet.zan.kz/rus/docs/Z1300000094",
+      "provision": "AI Law Articles 8(1) and 9, oversight and autonomy; Personal Data Law Article 19-1(2), information and objections. The band supports review and does not implement an objection route.",
+      "why_here": "The baseline scores supported an initial band (40, 45). I recalibrated it to (40, 70) under blinded inputs and counted actual review load in Part 3."
+    }
+  ]
+}
